@@ -1,0 +1,6 @@
+HERO_BG: https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1600
+FEATURE_SPEED: https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&q=80&w=800
+FEATURE_TRUST: https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&q=80&w=800
+FEATURE_EASY: https://images.unsplash.com/photo-1556742049-02e50f928339?auto=format&fit=crop&q=80&w=800
+SERVICE_SYSTEM: https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200
+SERVICE_VIP: https://images.unsplash.com/photo-1556740734-7f96267b118a?auto=format&fit=crop&q=80&w=1200

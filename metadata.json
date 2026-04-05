@@ -1,0 +1,7 @@
+{
+  "name": "코어페이 (CorePay) - 소액결제 현금화 서비스",
+  "description": "복잡한 서류 없이 5분 만에 해결하는 스마트한 소액결제 및 정보이용료 현금화 서비스, 코어페이입니다.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

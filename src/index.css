@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #7C3AED;
+  --color-secondary: #2563EB;
+  --color-accent: #A855F7;
+  --color-background: #F8FAFC;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-slate-900 font-sans;
+  }
+}
