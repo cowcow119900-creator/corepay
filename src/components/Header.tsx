@@ -22,23 +22,23 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center">
-              <img 
-                src="https://storage.googleapis.com/mms-it-prod-static/9906660b-8068-466d-8e47-e5473724c965/1743821526438.png" 
-                alt="COREPAY" 
-                className="h-8 md:h-10 object-contain" 
-                referrerPolicy="no-referrer" 
-              />
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
+                <span className="text-[16px] font-black tracking-tighter">CP</span>
+              </div>
+              <span className="text-2xl font-black tracking-tighter bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                COREPAY
+              </span>
             </Link>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-10">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-semibold transition-colors hover:text-primary ${
+                className={`text-sm font-bold transition-colors hover:text-primary ${
                   location.pathname === item.path ? 'text-primary' : 'text-slate-500'
                 }`}
               >
@@ -50,7 +50,7 @@ const Header = () => {
           <div className="hidden md:flex items-center">
             <button
               onClick={showMessenger}
-              className="flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 rounded-full text-sm font-bold hover:shadow-lg hover:shadow-primary/30 transition-all cursor-pointer"
+              className="flex items-center gap-2 bg-gradient-to-br from-primary to-secondary text-white px-7 py-3 rounded-full text-sm font-black hover:shadow-xl hover:shadow-primary/30 transition-all cursor-pointer active:scale-95"
             >
               24시 실시간 상담
             </button>
@@ -94,7 +94,7 @@ const Header = () => {
                     setIsOpen(false);
                     showMessenger();
                   }}
-                  className="flex items-center justify-center gap-2 bg-primary text-white w-full py-4 rounded-xl font-bold cursor-pointer"
+                  className="flex items-center justify-center gap-2 bg-gradient-to-br from-primary to-secondary text-white w-full py-4 rounded-xl font-black shadow-lg shadow-primary/20 cursor-pointer active:scale-[0.98] transition-transform"
                 >
                   24시 실시간 상담
                 </button>
