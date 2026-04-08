@@ -15,10 +15,10 @@ const About = () => {
           >
             <Award className="text-primary" size={48} />
           </motion.div>
-          <h1 className="text-4xl font-bold text-slate-900 mb-6">정직과 신뢰의 이름, 코어페이</h1>
+          <h1 className="text-4xl font-bold text-slate-900 mb-6">신뢰할 수 있는 금융 가이드 파트너, 코어페이</h1>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            코어페이는 급변하는 금융 환경 속에서 고객님의 소중한 자산을 안전하고 빠르게 현금화할 수 있도록 돕는 
-            핀테크 전문 기업입니다. 투명한 운영을 통해 업계의 새로운 기준을 만들어갑니다.
+            코어페이는 복잡한 모바일 금융 환경 속에서 고객님이 가장 현명한 선택을 하실 수 있도록 돕는 
+            금융 컨설팅 전문 플랫폼입니다. 정직한 안내와 투명한 정보를 통해 업계의 새로운 기준을 만들어갑니다.
           </p>
         </div>
 
@@ -29,12 +29,12 @@ const About = () => {
             <div className="bg-white/5 backdrop-blur-xl p-10 rounded-[2.5rem] border border-white/10 text-center">
               <h3 className="text-2xl font-bold mb-6 flex items-center justify-center gap-3">
                 <CheckCircle className="text-accent" size={28} />
-                코어페이의 투명성 선언
+                코어페이의 정직한 가이드 선언
               </h3>
               <p className="text-lg leading-relaxed opacity-80">
-                저희 코어페이는 불법적인 매입가 편취나 개인정보 오남용을 절대 하지 않습니다. 
-                모든 거래는 고객님의 동의 하에 진행되며, 결제 전 매입가를 명확히 고지합니다. 
-                정식 등록 업체로서 법적 책임을 다하며 고객님의 권익을 보호할 것을 약속드립니다.
+                저희 코어페이는 불법적인 정보 편취나 과도한 수수료 요구를 절대 하지 않습니다. 
+                모든 상담은 고객님의 상황을 최우선으로 고려하며, 진행 전 모든 조건을 명확히 안내합니다. 
+                신뢰할 수 있는 파트너로서 고객님의 권익을 보호하고 최선의 솔루션을 제안할 것을 약속드립니다.
               </p>
             </div>
           </div>

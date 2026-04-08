@@ -6,10 +6,10 @@ import Information from './pages/Information';
 import Services from './pages/Services';
 import About from './pages/About';
 import Support from './pages/Support';
-import { useChannelTalkInit } from './hooks/useChannelTalk';
+import { useFreshchatInit } from './hooks/useFreshchat';
 
 export default function App() {
-  useChannelTalkInit();
+  useFreshchatInit();
 
   return (
     <Router>

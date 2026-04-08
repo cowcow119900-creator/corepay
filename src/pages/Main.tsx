@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Zap, ShieldCheck, Clock, CheckCircle2, MessageSquare, Star, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
-import { useChannelTalk } from '../hooks/useChannelTalk';
+import { useFreshchat } from '../hooks/useFreshchat';
 
 const DepositHistory = () => {
   const [deposits, setDeposits] = React.useState([
@@ -84,7 +84,7 @@ const DepositHistory = () => {
 };
 
 const Main = () => {
-  const { showMessenger } = useChannelTalk();
+  const { openChat } = useFreshchat();
 
   return (
     <div className="pt-16 md:pt-20">
@@ -111,17 +111,20 @@ const Main = () => {
               AI 기반 스마트 금융 서비스 플랫폼
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
-              복잡한 서류 없이,<br />
-              내 폰 안의 한도를<br />
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">5분 만에 현금으로</span>
+              내 폰 안의 가치,<br />
+              전문가와 함께<br />
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                스마트하게 비교하고<br />
+                설계하세요.
+              </span>
             </h1>
             <p className="text-lg text-slate-300 mb-10 leading-relaxed">
-              당장의 현금 유동성이 필요하신가요? 코어페이는 AI 시스템을 통해<br className="hidden md:block" />
-              가장 빠르고 안전한 소액결제 현금화 서비스를 제공합니다.
+              복잡한 모바일 금융 서비스, 혼자 고민하지 마세요. 코어페이는 AI 시스템과<br className="hidden md:block" />
+              전문 상담사를 통해 고객님께 가장 유리한 이용 가이드를 제안해 드립니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={showMessenger}
+                onClick={openChat}
                 className="flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/40 transition-all cursor-pointer"
               >
                 지금 바로 1:1 무료 상담받기
@@ -142,26 +145,26 @@ const Main = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">왜 코어페이인가요?</h2>
-            <p className="text-slate-600">수많은 고객님이 코어페이를 선택하는 3가지 핵심 이유</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">코어페이만의 전문 상담 서비스</h2>
+            <p className="text-slate-600">고객님의 상황에 맞는 최적의 금융 가이드를 제공합니다.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 icon: <Zap className="text-primary" size={32} />,
-                title: "압도적인 속도",
-                desc: "신청부터 입금까지 단 5분! 24시간 자동화 시스템으로 기다림 없는 즉시 입금을 보장합니다."
+                title: "실시간 맞춤 비교",
+                desc: "다양한 서비스의 요율과 혜택을 실시간으로 비교하여, 고객님께 가장 유리한 선택지를 즉시 안내해 드립니다."
               },
               {
                 icon: <ShieldCheck className="text-secondary" size={32} />,
-                title: "투명한 매입가",
-                desc: "숨겨진 비용 ZERO! 업계 최고 수준의 매입가를 사전에 명확히 안내하며 정직하게 운영합니다."
+                title: "투명한 정보 제공",
+                desc: "모든 이용 절차와 수수료를 투명하게 공개합니다. 과도한 요구 없이 정직한 가이드만을 약속드립니다."
               },
               {
                 icon: <CheckCircle2 className="text-accent" size={32} />,
-                title: "무심사 간편 이용",
-                desc: "신용등급 하락 걱정 NO! 복잡한 서류나 심사 과정 없이 본인 명의의 휴대폰만 있다면 누구나 가능합니다."
+                title: "1:1 밀착 가이드",
+                desc: "초보자도 어렵지 않게! 전문 상담사가 신청부터 완료까지 모든 과정을 친절하게 1:1로 안내해 드립니다."
               }
             ].map((feature, idx) => (
               <motion.div
@@ -187,8 +190,8 @@ const Main = () => {
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">5분 완성, 이용 절차</h2>
-            <p className="text-slate-600">누구나 따라 할 수 있는 아주 간편한 3단계 프로세스</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">안전한 상담 프로세스</h2>
+            <p className="text-slate-600">전문가와 함께하는 체계적인 3단계 안내 절차</p>
           </div>
 
           <div className="relative">
@@ -197,9 +200,9 @@ const Main = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
               {[
-                { step: "01", title: "상담 신청", desc: "카카오톡을 통해 1:1 상담을 신청하고 한도를 확인합니다." },
-                { step: "02", title: "결제 진행", desc: "안내에 따라 소액결제 또는 정보이용료 결제를 안전하게 진행합니다." },
-                { step: "03", title: "즉시 입금", desc: "결제 확인 즉시 고객님의 계좌로 5분 이내에 현금이 입금됩니다." }
+                { step: "01", title: "맞춤 상담", desc: "고객님의 현재 상황과 필요 한도를 파악하여 최적의 플랜을 제시합니다." },
+                { step: "02", title: "비교 및 선택", desc: "제시된 여러 방안 중 고객님께 가장 유리한 서비스를 직접 비교하고 선택합니다." },
+                { step: "03", title: "안전한 진행", desc: "선택하신 서비스가 안전하게 처리될 수 있도록 전 과정을 실시간으로 가이드합니다." }
               ].map((item, idx) => (
                 <div key={idx} className="text-center">
                   <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-xl shadow-primary/30 border-4 border-white">
@@ -222,13 +225,13 @@ const Main = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">신뢰할 수 있는 정식 업체,<br />코어페이가 약속합니다.</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">신뢰할 수 있는 금융 파트너,<br />코어페이가 약속합니다.</h2>
                 <ul className="space-y-4">
                   {[
-                    "365일 24시간 실시간 입금 시스템 가동",
-                    "개인정보 암호화 및 철저한 보안 관리",
-                    "불법 매입가 및 추가 비용 요구 절대 없음",
-                    "누적 이용 고객 5만 명 돌파, 높은 재방문율"
+                    "365일 24시간 실시간 전문 상담사 대기",
+                    "개인정보 암호화 및 철저한 보안 가이드 준수",
+                    "불필요한 과잉 서비스 권유 절대 없음",
+                    "누적 상담 건수 10만 건 돌파, 높은 신뢰도"
                   ].map((text, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle2 className="text-accent" size={20} />
@@ -267,8 +270,8 @@ const Main = () => {
             {/* Testimonials */}
             <div className="lg:col-span-2">
               <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">고객 리얼 후기</h2>
-                <p className="text-slate-600">코어페이를 이용하신 고객님들의 솔직한 목소리입니다.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">상담 만족 후기</h2>
+                <p className="text-slate-600">코어페이의 전문적인 안내를 받으신 고객님들의 후기입니다.</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -277,25 +280,25 @@ const Main = () => {
                     name: "김*현",
                     rating: 5,
                     date: "2026.03.28",
-                    content: "갑자기 급전이 필요해서 막막했는데, 상담원분이 너무 친절하게 안내해주셔서 5분 만에 입금 받았어요. 매입가도 미리 알려주신 그대로라 믿음이 갑니다!"
+                    content: "처음이라 모르는 게 많았는데, 상담원분이 제 상황에 맞춰서 가장 유리한 방법을 조목조목 비교해주셔서 정말 큰 도움이 됐어요. 안내도 너무 친절했습니다!"
                   },
                   {
                     name: "이*우",
                     rating: 5,
                     date: "2026.03.25",
-                    content: "다른 곳은 복잡하고 시간도 오래 걸리는데 코어페이는 정말 빠르네요. 새벽 시간인데도 바로 처리해주셔서 정말 감사했습니다. 다음에도 꼭 이용할게요."
+                    content: "여러 곳 알아봤지만 코어페이만큼 투명하게 정보를 알려주는 곳이 없더라고요. 수수료나 절차를 미리 다 설명해주니 안심하고 진행할 수 있었습니다."
                   },
                   {
                     name: "박*아",
                     rating: 5,
                     date: "2026.03.20",
-                    content: "처음이라 걱정이 많았는데 정식 업체라 그런지 확실히 다르네요. 보안도 철저하고 입금 확인도 실시간으로 알려주니 안심하고 거래했습니다."
+                    content: "새벽 시간인데도 상담이 가능해서 놀랐어요. 급한 마음에 이것저것 물어봤는데 귀찮은 내색 없이 하나하나 가이드해주셔서 정말 감사했습니다."
                   },
                   {
                     name: "최*준",
                     rating: 5,
                     date: "2026.03.15",
-                    content: "급하게 병원비가 필요했는데 코어페이 덕분에 한숨 돌렸습니다. 상담부터 입금까지 막힘없이 진행되어서 정말 만족스러워요."
+                    content: "복잡한 금융 용어 대신 알기 쉽게 설명해주셔서 좋았습니다. 덕분에 저에게 가장 적합한 서비스를 선택할 수 있었어요. 전문성이 느껴집니다."
                   }
                 ].map((review, idx) => (
                   <motion.div
@@ -341,14 +344,14 @@ const Main = () => {
             <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-primary/20">
               <MessageSquare className="text-white" size={36} />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">지금 바로 한도를 확인해보세요</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">나에게 맞는 최적의 플랜을 찾아보세요</h2>
             <p className="text-slate-600 mb-10 text-lg">
               AI 기반 전문 상담 시스템이 24시간 대기 중입니다. <br className="hidden md:block" />
-              가장 빠르고 친절하게 안내해 드리겠습니다.
+              고객님의 입장에서 가장 유리한 방향으로 안내해 드리겠습니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={showMessenger}
+                onClick={openChat}
                 className="bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl hover:shadow-primary/40 transition-all cursor-pointer"
               >
                  1:1 상담하기

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useChannelTalk } from '../hooks/useChannelTalk';
+import { useFreshchat } from '../hooks/useFreshchat';
 
 const Footer = () => {
-  const { showMessenger } = useChannelTalk();
+  const { openChat } = useFreshchat();
 
   return (
     <footer className="bg-slate-900 text-slate-400 py-12 md:py-20">
@@ -41,7 +41,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li>
                 <button
-                  onClick={showMessenger}
+                  onClick={openChat}
                   className="hover:text-white transition-colors cursor-pointer text-left w-full"
                 >
                    1:1 상담
@@ -49,7 +49,7 @@ const Footer = () => {
               </li>
               <li>
                 <button
-                  onClick={showMessenger}
+                  onClick={openChat}
                   className="hover:text-white transition-colors cursor-pointer text-left w-full"
                 >
                   상담하기

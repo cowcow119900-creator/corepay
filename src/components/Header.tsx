@@ -2,12 +2,12 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useChannelTalk } from '../hooks/useChannelTalk';
+import { useFreshchat } from '../hooks/useFreshchat';
 
 const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const location = useLocation();
-  const { showMessenger } = useChannelTalk();
+  const { openChat } = useFreshchat();
 
   const navItems = [
     { name: '홈', path: '/' },
@@ -49,7 +49,7 @@ const Header = () => {
 
           <div className="hidden md:flex items-center">
             <button
-              onClick={showMessenger}
+              onClick={openChat}
               className="flex items-center gap-2 bg-gradient-to-br from-primary to-secondary text-white px-7 py-3 rounded-full text-sm font-black hover:shadow-xl hover:shadow-primary/30 transition-all cursor-pointer active:scale-95"
             >
               24시 실시간 상담
@@ -92,7 +92,7 @@ const Header = () => {
                 <button
                   onClick={() => {
                     setIsOpen(false);
-                    showMessenger();
+                    openChat();
                   }}
                   className="flex items-center justify-center gap-2 bg-gradient-to-br from-primary to-secondary text-white w-full py-4 rounded-xl font-black shadow-lg shadow-primary/20 cursor-pointer active:scale-[0.98] transition-transform"
                 >
