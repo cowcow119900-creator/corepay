@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://코어페이.com/sitemap.xml
